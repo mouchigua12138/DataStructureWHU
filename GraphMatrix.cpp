@@ -96,6 +96,7 @@ template <typename Tv, typename Te> void GraphMatrix<Tv, Te>::insert(Te const& e
 template <typename Tv, typename Te> Te GraphMatrix<Tv, Te>::remove(int i, int j) {
 	Te eBak = edge(i, j);//备份
 	delete E[i][i];//删除记录
+	E[i][j] = NULL;
 	this->e--;
 	V[i].outDegree--;
 	V[j].inDegree--;
